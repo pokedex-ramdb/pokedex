@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import { GiPokecog } from "react-icons/gi";
-import { Home, List, Team } from "./";
+import { Home, List, Team, SignIn, SignUp } from "./";
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   appBar: {
-    borderBottom: `1px solid ${theme.palette.divider}`
+    borderBottom: `0px solid ${theme.palette.divider}`
   },
   toolbar: {
     flexWrap: "wrap"
@@ -139,7 +139,7 @@ export default function Pricing() {
               </Link>
             </nav>
             <Button
-              href="#"
+              href="/login"
               color="primary"
               variant="outlined"
               className={classes.link}
@@ -159,6 +159,12 @@ export default function Pricing() {
           </Route>
           <Route path="/team">
             <Team />
+          </Route>
+          <Route path="/login">
+            <SignIn />
+          </Route>
+          <Route path="/register">
+            <SignUp />
           </Route>
         </Switch>
       </Router>
