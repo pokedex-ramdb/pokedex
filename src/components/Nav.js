@@ -7,7 +7,6 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import { GiPokecog } from "react-icons/gi";
-import { Home, List, Team, SignIn, SignUp } from "./";
 import {
   BrowserRouter as Router,
   Switch,
@@ -58,8 +57,7 @@ export default function Pricing() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <Router>
+    <div>    
         <CssBaseline />
         <AppBar
           position="static"
@@ -148,26 +146,6 @@ export default function Pricing() {
             </Button>
           </Toolbar>
         </AppBar>
-
-        {/* Footer */}
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/list">
-            <List />
-          </Route>
-          <Route path="/team">
-            <Team />
-          </Route>
-          <Route path="/login">
-            <SignIn />
-          </Route>
-          <Route path="/register">
-            <SignUp />
-          </Route>
-        </Switch>
-      </Router>
-    </React.Fragment>
+        </div>
   );
 }

@@ -107,9 +107,15 @@ const useStyles = makeStyles(theme => ({
     }
   }));
 
-export default function SignUp() {
+function SignUp(props) {
 
     const classes = useStyles();
+
+    const handleBack = () => {
+      history.goBack();
+    };
+
+    const { history } = props;
 
     return (
         <div className={classes.root}>
@@ -134,7 +140,7 @@ export default function SignUp() {
           <div className={classes.content}>
             <div className={classes.contentHeader}>
               <IconButton>
-                <ArrowBackIcon />
+                <ArrowBackIcon onClick={handleBack} />
               </IconButton>
             </div>
             <div className={classes.contentBody}>
@@ -149,7 +155,7 @@ export default function SignUp() {
                     validate={validationForm}
                     onSubmit={(values, {setSubmitting}) => {
                     localStorage.setItem("user", JSON.stringify(values))
-                    // props.history.push("/signin")
+                    props.history.push("/login")
                   }}
                 >
                     {({
@@ -276,12 +282,7 @@ export default function SignUp() {
                   variant="body1"
                 >
                   Have an account?{' '}
-                  <Link
-                    to="/signin"
-                    variant="h6"
-                  >
-                    Sign in
-                  </Link>
+                  <a style={{marginLeft:"0px"}} href="/login">Sign In</a>
                 </Typography>
                     </form>
                   )}
@@ -293,3 +294,5 @@ export default function SignUp() {
     </div>
     )
 }
+
+export default withRouter(SignUp)

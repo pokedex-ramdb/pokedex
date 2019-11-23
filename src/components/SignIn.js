@@ -16,9 +16,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link as Links
+  Link as Links,
+  withRouter
 } from "react-router-dom";
-import {SignUp} from './'
+import { SignUp } from '.';
+
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -115,7 +117,7 @@ const useStyles = makeStyles(theme => ({
   }));
   
 
-export default function SignIn(props) {
+function SignIn(props) {
     const classes = useStyles();
     const [state, setState] = React.useState({ email: "", password: "" });
 
@@ -162,10 +164,11 @@ export default function SignIn(props) {
               validate={validationForm}
               onSubmit={(values, {setSubmitting}) => {
                 const user = JSON.parse(localStorage.getItem("user"));
-                if (user.email === state.email && user.password === state.password) {
+                console.log(values.email)
+                if (user.email === values.email && user.password === values.password) {
                     localStorage.setItem("isLogin", JSON.stringify(true));
                 if (JSON.parse(localStorage.getItem("isLogin"))) {
-                    props.history.push("/");
+                    props.history.push("/team");
                 }
               } else {
                     alert("email atau password salah");
@@ -181,6 +184,8 @@ export default function SignIn(props) {
                   }) => (
               <form
                 className={classes.form}
+                onSubmit={handleSubmit}
+                noValidate
               >
                 <Typography
                   className={classes.title}
@@ -254,12 +259,7 @@ export default function SignIn(props) {
                   variant="body1"
                 >
                   Don't have an account?
-                  <Links
-                    to="/register"
-                    variant="h8"
-                  >
-                     Sign up
-                  </Links>
+                  <a style={{marginLeft:"5px"}} href="/register">Sign Up</a>
                 </Typography>
               </form>
                   )}
@@ -270,13 +270,9 @@ export default function SignIn(props) {
       </Grid>
     </div>
 
-          <Switch>
-          <Route path="/register">
-            <SignUp />
-          </Route>
-          </Switch>
-
     </Router>
     </React.Fragment>
     )
 }
+
+export default withRouter(SignIn)
