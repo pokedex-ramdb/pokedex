@@ -168,7 +168,7 @@ function SignIn(props) {
                 if (user.email === values.email && user.password === values.password) {
                     localStorage.setItem("isLogin", JSON.stringify(true));
                 if (JSON.parse(localStorage.getItem("isLogin"))) {
-                    props.history.push("/team");
+                    props.history.push("/list-pokemon");
                 }
               } else {
                     alert("email atau password salah");

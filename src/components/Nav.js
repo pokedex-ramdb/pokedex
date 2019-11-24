@@ -107,7 +107,7 @@ export default function Pricing() {
               >
                 <span className="navname">
                   <Links
-                    to="/list"
+                    to="/list-pokemon"
                     style={{
                       color: "white",
                       textDecoration: "none"
@@ -142,7 +142,7 @@ export default function Pricing() {
               variant="outlined"
               className={classes.link}
             >
-              <span style={{ color: "white" }}>Login</span>
+              <Links to='/login' style={{textDecoration:'none'}}><span style={{ color: "white" }}>Login</span></Links>
             </Button>
           </Toolbar>
         </AppBar>
