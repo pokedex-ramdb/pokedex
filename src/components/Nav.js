@@ -57,95 +57,92 @@ export default function Pricing() {
   const classes = useStyles();
 
   return (
-    <div>    
-        <CssBaseline />
-        <AppBar
-          position="static"
-          color="default"
-          elevation={0}
-          className={classes.appBar}
+    <div>
+      <CssBaseline />
+      <AppBar
+        position="static"
+        color="default"
+        elevation={0}
+        className={classes.appBar}
+      >
+        <Toolbar
+          className={classes.toolbar}
+          style={{ backgroundColor: "#181818", color: "white" }}
         >
-          <Toolbar
-            className={classes.toolbar}
-            style={{ backgroundColor: "#181818", color: "white" }}
+          <Typography
+            variant="h6"
+            color="inherit"
+            noWrap
+            className={classes.toolbarTitle}
           >
-            <Typography
-              variant="h6"
-              color="inherit"
-              noWrap
-              className={classes.toolbarTitle}
-            >
-              <span className="title">
-                <GiPokecog />
-                Pokedex
-              </span>
-            </Typography>
-            <nav>
-              <Link
-                variant="button"
-                color="textPrimary"
-                href="#"
-                className={classes.link}
-              >
-                <span className="navname">
-                  <Links
-                    to="/"
-                    style={{
-                      color: "white",
-                      textDecoration: "none"
-                    }}
-                  >
-                    Home
-                  </Links>
-                </span>
-              </Link>
-              <Link
-                variant="button"
-                color="textPrimary"
-                href="#"
-                className={classes.link}
-              >
-                <span className="navname">
-                  <Links
-                    to="/list"
-                    style={{
-                      color: "white",
-                      textDecoration: "none"
-                    }}
-                  >
-                    List
-                  </Links>
-                </span>
-              </Link>
-              <Link
-                variant="button"
-                color="textPrimary"
-                href="#"
-                className={classes.link}
-              >
-                <span className="navname">
-                  <Links
-                    to="/team"
-                    style={{
-                      color: "white",
-                      textDecoration: "none"
-                    }}
-                  >
-                    Team
-                  </Links>
-                </span>
-              </Link>
-            </nav>
-            <Button
-              href="/login"
-              color="primary"
-              variant="outlined"
+            <span className="title">
+              <GiPokecog />
+              Pokedex
+            </span>
+          </Typography>
+          <nav>
+            <Link
+              variant="button"
+              color="textPrimary"
+              href="#"
               className={classes.link}
             >
+              <span className="navname">
+                <Links
+                  to="/"
+                  style={{
+                    color: "white",
+                    textDecoration: "none"
+                  }}
+                >
+                  Home
+                </Links>
+              </span>
+            </Link>
+            <Link
+              variant="button"
+              color="textPrimary"
+              href="#"
+              className={classes.link}
+            >
+              <span className="navname">
+                <Links
+                  to="/list"
+                  style={{
+                    color: "white",
+                    textDecoration: "none"
+                  }}
+                >
+                  List
+                </Links>
+              </span>
+            </Link>
+            <Link
+              variant="button"
+              color="textPrimary"
+              href="#"
+              className={classes.link}
+            >
+              <span className="navname">
+                <Links
+                  to="/team"
+                  style={{
+                    color: "white",
+                    textDecoration: "none"
+                  }}
+                >
+                  Team
+                </Links>
+              </span>
+            </Link>
+          </nav>
+          <Button color="primary" variant="outlined" className={classes.link}>
+            <Links to="/login">
               <span style={{ color: "white" }}>Login</span>
-            </Button>
-          </Toolbar>
-        </AppBar>
-        </div>
+            </Links>
+          </Button>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 }
