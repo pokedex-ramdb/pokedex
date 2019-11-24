@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -7,10 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import { GiPokecog } from "react-icons/gi";
-import {
-  Link as Links,
-  withRouter
-} from "react-router-dom";
+import { Link as Links, withRouter } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -52,104 +49,107 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function Navbar(props) {
+  const classes = useStyles();
 
-    const classes = useStyles();
+  const logOut = () => {
+    localStorage.removeItem("isLogin");
 
-    const logOut = () => {
-        localStorage.removeItem("isLogin");
-        
-        props.history.push("/login");
-    };
-    
-    return (
-        <div>
-        <CssBaseline />
-        <AppBar
-          position="static"
-          color="default"
-          elevation={0}
-          className={classes.appBar}
+    props.history.push("/login");
+  };
+
+  return (
+    <div>
+      <CssBaseline />
+      <AppBar
+        position="static"
+        color="default"
+        elevation={0}
+        className={classes.appBar}
+      >
+        <Toolbar
+          className={classes.toolbar}
+          style={{ backgroundColor: "#000000", color: "white" }}
         >
-          <Toolbar
-            className={classes.toolbar}
-            style={{ backgroundColor: "#181818", color: "white" }}
+          <Typography
+            variant="h6"
+            color="inherit"
+            noWrap
+            className={classes.toolbarTitle}
           >
-            <Typography
-              variant="h6"
-              color="inherit"
-              noWrap
-              className={classes.toolbarTitle}
+            <span className="title">
+              <GiPokecog />
+              Pokedex
+            </span>
+          </Typography>
+          <nav>
+            <Link
+              variant="button"
+              color="textPrimary"
+              href="#"
+              className={classes.link}
             >
-              <span className="title">
-                <GiPokecog />
-                Pokedex
+              <span className="navname">
+                <Links
+                  to="/"
+                  style={{
+                    color: "white",
+                    textDecoration: "none"
+                  }}
+                >
+                  Home
+                </Links>
               </span>
-            </Typography>
-            <nav>
-              <Link
-                variant="button"
-                color="textPrimary"
-                href="#"
-                className={classes.link}
-              >
-                <span className="navname">
-                  <Links
-                    to="/"
-                    style={{
-                      color: "white",
-                      textDecoration: "none"
-                    }}
-                  >
-                    Home
-                  </Links>
-                </span>
-              </Link>
-              <Link
-                variant="button"
-                color="textPrimary"
-                href="#"
-                className={classes.link}
-              >
-                <span className="navname">
-                  <Links
-                    to="/list-pokemon"
-                    style={{
-                      color: "white",
-                      textDecoration: "none"
-                    }}
-                  >
-                    List
-                  </Links>
-                </span>
-              </Link>
-              <Link
-                variant="button"
-                color="textPrimary"
-                href="#"
-                className={classes.link}
-              >
-                <span className="navname">
-                  <Links
-                    to="/team"
-                    style={{
-                      color: "white",
-                      textDecoration: "none"
-                    }}
-                  >
-                    Team
-                  </Links>
-                </span>
-              </Link>
-            </nav>
-            <Button style={{backgroundColor:"black", width:'10px'}} variant="outlined" className={classes.link}>
-              <Links onClick={logOut} style={{textDecoration:"none"}}>
-                <span style={{ color: "white", fontSize:'12px' }}>Logout</span>
-              </Links>
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </div>
-    )
+            </Link>
+            <Link
+              variant="button"
+              color="textPrimary"
+              href="#"
+              className={classes.link}
+            >
+              <span className="navname">
+                <Links
+                  to="/list-pokemon"
+                  style={{
+                    color: "white",
+                    textDecoration: "none"
+                  }}
+                >
+                  List
+                </Links>
+              </span>
+            </Link>
+            <Link
+              variant="button"
+              color="textPrimary"
+              href="#"
+              className={classes.link}
+            >
+              <span className="navname">
+                <Links
+                  to="/team"
+                  style={{
+                    color: "white",
+                    textDecoration: "none"
+                  }}
+                >
+                  Team
+                </Links>
+              </span>
+            </Link>
+          </nav>
+          <Button
+            style={{ backgroundColor: "black", width: "10px" }}
+            variant="outlined"
+            className={classes.link}
+          >
+            <Links onClick={logOut} style={{ textDecoration: "none" }}>
+              <span style={{ color: "white", fontSize: "12px" }}>Logout</span>
+            </Links>
+          </Button>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
 
-export default withRouter(Navbar)
+export default withRouter(Navbar);

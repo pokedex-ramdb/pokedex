@@ -1,7 +1,16 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import { Navbar, Footer, Home, Team, SignIn, SignUp, ListPokemon, DetailPokemon } from "./components";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  Navbar,
+  Footer,
+  Home,
+  Team,
+  SignIn,
+  SignUp,
+  ListPokemon,
+  DetailPokemon
+} from "./components";
+import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
     <Router>

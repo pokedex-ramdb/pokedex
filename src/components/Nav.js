@@ -67,7 +67,7 @@ export default function Pricing() {
       >
         <Toolbar
           className={classes.toolbar}
-          style={{ backgroundColor: "#000000", color: "white" }}
+          style={{ color: "white", backgroundColor: "#000000" }}
         >
           <Typography
             variant="h6"

@@ -7,8 +7,23 @@ const Home = () => {
   return (
     <div>
       <Jumbotron fluid className="jumbotron">
-        <p className="hi" style={{color:'white', fontSize:'30px', marginLeft:'50px'}}>Welcome to pokedex... </p>
-        <p className="hi" style={{color:'white', fontSize:'40px', marginLeft:'50px', lineHeight:'5px'}}>mr. Rizkianakbar </p>
+        <p
+          className="hi"
+          style={{ color: "white", fontSize: "30px", marginLeft: "50px" }}
+        >
+          Welcome to pokedex...{" "}
+        </p>
+        <p
+          className="hi"
+          style={{
+            color: "white",
+            fontSize: "40px",
+            marginLeft: "50px",
+            lineHeight: "5px"
+          }}
+        >
+          mr. Rizkianakbar{" "}
+        </p>
       </Jumbotron>
       <Container>
         <Row>
@@ -25,7 +40,7 @@ const Home = () => {
           </Col>
         </Row>
         <Row style={{ textAlign: "center" }}>
-          <Col lg={4} sm={12}>
+          <Col lg={4} sm={12} style={{ marginTop: "60px" }}>
             <Card className="text-center">
               <Card.Body>
                 <Card.Title className="navnamee">20 List Pokemon</Card.Title>
@@ -50,7 +65,7 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col lg={4} sm={12}>
+          <Col lg={4} sm={12} style={{ marginTop: "60px" }}>
             <Card className="text-center">
               <Card.Body>
                 <Card.Title className="navnamee">Responsive</Card.Title>
@@ -65,17 +80,17 @@ const Home = () => {
         </Row>
       </Container>
       <div className="imgfixed">
-        <div className="buton">
+        <div center>
           <br />
           <br />
           <br />
           <br />
           <p style={{ textAlign: "center", color: "white", fontSize: "30px" }}>
-            Wanna see your favorite pokemon ?
+            Do you want to see your favorite Pokemon ?
           </p>
-          {/* <Button variant="primary" style={{ alignContent: "center" }}>
+          <Button variant="outline-primary" className="buton">
             GET STARTED !!
-          </Button> */}
+          </Button>
         </div>
       </div>
     </div>

@@ -7,9 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import { GiPokecog } from "react-icons/gi";
-import {
-  Link as Links
-} from "react-router-dom";
+import { Link as Links } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -51,11 +49,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Navbar() {
-
   const classes = useStyles();
-  
-    return (
-      <div>
+
+  return (
+    <div>
+     
+
       <CssBaseline />
       <AppBar
         position="static"
@@ -65,7 +64,7 @@ export default function Navbar() {
       >
         <Toolbar
           className={classes.toolbar}
-          style={{ backgroundColor: "#181818", color: "white" }}
+          style={{ backgroundColor: "#000000", color: "white" }}
         >
           <Typography
             variant="h6"
@@ -117,12 +116,12 @@ export default function Navbar() {
             </Link>
           </nav>
           <Button color="primary" variant="outlined" className={classes.link}>
-            <Links to="/login" style={{textDecoration:"none"}}>
+            <Links to="/login" style={{ textDecoration: "none" }}>
               <span style={{ color: "white" }}>Login</span>
             </Links>
           </Button>
         </Toolbar>
       </AppBar>
     </div>
-    )
+  );
 }
