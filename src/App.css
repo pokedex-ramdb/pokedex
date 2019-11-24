@@ -7,6 +7,11 @@
   font-size: 19px;
   margin: 7px;
 }
+.navnama {
+  font-family: "Patrick Hand", cursive;
+  font-size: 19px;
+  margin: 7px;
+}
 .jumbotron {
   background-image: url(./components/pppp.jpg);
   background-size: cover;

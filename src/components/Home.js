@@ -9,7 +9,12 @@ const Home = () => {
       <Jumbotron fluid className="jumbotron">
         <p
           className="hi"
-          style={{ color: "white", fontSize: "30px", marginLeft: "50px" }}
+          style={{
+            color: "white",
+            fontSize: "30px",
+            marginLeft: "50px",
+            marginTop: "80px"
+          }}
         >
           Welcome to pokedex...{" "}
         </p>

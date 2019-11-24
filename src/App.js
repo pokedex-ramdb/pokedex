@@ -10,7 +10,6 @@ import {
   ListPokemon,
   DetailPokemon
 } from "./components";
-import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
     <Router>

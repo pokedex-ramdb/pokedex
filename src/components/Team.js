@@ -1,11 +1,7 @@
 import React from "react";
 
 const Team = () => {
-  return (
-    <div>
-      <p>ini team </p>
-    </div>
-  );
+  return <div>ini team</div>;
 };
 
 export default Team;

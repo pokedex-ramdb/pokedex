@@ -130,92 +130,78 @@ function SignIn(props) {
     <React.Fragment>
       <Router>
         <div className={classes.root}>
-      <Grid
-        className={classes.grid}
-        container
-      >
-        <Grid
-          className={classes.quoteContainer}
-          item
-          lg={5}
-        >
-            <div className={classes.quote}>
-          </div>
-        </Grid>
-        <Grid
-          className={classes.content}
-          item
-          lg={7}
-          xs={12}
-        >
-          <div className={classes.content}>
-            <div className={classes.contentHeader}>
-              <IconButton onClick={handleBack}>
-                <ArrowBackIcon />
-              </IconButton>
-            </div>
-            <div className={classes.contentBody}>
-              <Formik 
-              initialValues={{
-                email:"",
-                password:""
-              }}
-              validate={validationForm}
-              onSubmit={(values, {setSubmitting}) => {
-                const user = JSON.parse(localStorage.getItem("user"));
-                console.log(values.email)
-                if (user.email === values.email && user.password === values.password) {
-                    localStorage.setItem("isLogin", JSON.stringify(true));
-                if (JSON.parse(localStorage.getItem("isLogin"))) {
-                    props.history.push("/list-pokemon");
-                }
-              } else {
-                    alert("email atau password salah");
-              }
-              }}
-              >
-                {({
-                    values,
-                    handleChange,
-                    handleBlur,
-                    handleSubmit,
-                    isSubmitting
-                  }) => (
-              <form
-                className={classes.form}
-                onSubmit={handleSubmit}
-                noValidate
-              >
-                <Typography
-                  className={classes.title}
-                  variant="h3"
-                >
-                  Sign in
-                </Typography>
-                <Grid
-                  className={classes.socialButtons}
-                  container
-                  spacing={2}
-                >
-                </Grid>
-                <TextField
-                  className={classes.textField}
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  defaultValue={values.email}
-                  autoComplete="email"
-                />
-                <p
-                            style={{
-                            color:"red",
-                            fontStyle:"italic"
-                            }}
+          <Grid className={classes.grid} container>
+            <Grid className={classes.quoteContainer} item lg={5}>
+              <div className={classes.quote}></div>
+            </Grid>
+            <Grid className={classes.content} item lg={7} xs={12}>
+              <div className={classes.content}>
+                <div className={classes.contentHeader}>
+                  <IconButton onClick={handleBack}>
+                    <ArrowBackIcon />
+                  </IconButton>
+                </div>
+                <div className={classes.contentBody}>
+                  <Formik
+                    initialValues={{
+                      email: "",
+                      password: ""
+                    }}
+                    validate={validationForm}
+                    onSubmit={(values, { setSubmitting }) => {
+                      const user = JSON.parse(localStorage.getItem("user"));
+                      console.log(values.email);
+                      if (
+                        user.email === values.email &&
+                        user.password === values.password
+                      ) {
+                        localStorage.setItem("isLogin", JSON.stringify(true));
+                        if (JSON.parse(localStorage.getItem("isLogin"))) {
+                          props.history.push("/list-pokemon");
+                        }
+                      } else {
+                        alert("email atau password salah");
+                      }
+                    }}
+                  >
+                    {({
+                      values,
+                      handleChange,
+                      handleBlur,
+                      handleSubmit,
+                      isSubmitting
+                    }) => (
+                      <form
+                        className={classes.form}
+                        onSubmit={handleSubmit}
+                        noValidate
+                      >
+                        <Typography className={classes.title} variant="h3">
+                          Sign in
+                        </Typography>
+                        <Grid
+                          className={classes.socialButtons}
+                          container
+                          spacing={2}
+                        ></Grid>
+                        <TextField
+                          className={classes.textField}
+                          variant="outlined"
+                          required
+                          fullWidth
+                          id="email"
+                          label="Email Address"
+                          name="email"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          defaultValue={values.email}
+                          autoComplete="email"
+                        />
+                        <p
+                          style={{
+                            color: "red",
+                            fontStyle: "italic"
+                          }}
                         >
                           <ErrorMessage name="email" />
                         </p>

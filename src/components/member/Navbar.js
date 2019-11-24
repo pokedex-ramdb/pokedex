@@ -1,94 +1,45 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import { makeStyles } from "@material-ui/core/styles";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Nav, Navbar, Container, Button } from "react-bootstrap";
 import { GiPokecog } from "react-icons/gi";
+
 import { Link as Links, withRouter } from "react-router-dom";
 
-const useStyles = makeStyles(theme => ({
-  "@global": {
-    body: {
-      backgroundColor: theme.palette.common.white
-    },
-    ul: {
-      margin: 0,
-      padding: 0
-    },
-    li: {
-      listStyle: "none"
-    }
-  },
-  appBar: {
-    borderBottom: `0px solid ${theme.palette.divider}`
-  },
-  toolbar: {
-    flexWrap: "wrap"
-  },
-  toolbarTitle: {
-    flexGrow: 1
-  },
-  link: {
-    margin: theme.spacing(1, 1.5)
-  },
-  heroContent: {
-    padding: theme.spacing(8, 0, 6)
-  },
-  cardHeader: {
-    backgroundColor: theme.palette.grey[200]
-  },
-  cardPricing: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "baseline",
-    marginBottom: theme.spacing(2)
-  }
-}));
-
-function Navbar(props) {
-  const classes = useStyles();
-
+const Navbarr = props => {
   const logOut = () => {
     localStorage.removeItem("isLogin");
 
     props.history.push("/login");
   };
-
   return (
     <div>
-      <CssBaseline />
-      <AppBar
-        position="static"
-        color="default"
-        elevation={0}
-        className={classes.appBar}
+      <Navbar
+        fixed="top"
+        collapseOnSelect
+        expand="lg"
+        variant="dark"
+        style={{ backgroundColor: "#000000" }}
       >
-        <Toolbar
-          className={classes.toolbar}
-          style={{ backgroundColor: "#000000", color: "white" }}
-        >
-          <Typography
-            variant="h6"
-            color="inherit"
-            noWrap
-            className={classes.toolbarTitle}
-          >
-            <span className="title">
+        <Container>
+          <Navbar.Brand className="title" style={{ fontSize: "35px" }}>
+            <Links
+              to="/"
+              style={{
+                color: "white",
+                textDecoration: "none"
+              }}
+            >
               <GiPokecog />
               Pokedex
-            </span>
-          </Typography>
-          <nav>
-            <Link
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              <span className="navname">
+            </Links>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ml-auto navnama">
+              <Nav.Link
+                href="#features"
+                style={{ color: "white", marginLeft: "20px" }}
+              >
                 <Links
                   to="/"
                   style={{
@@ -96,17 +47,11 @@ function Navbar(props) {
                     textDecoration: "none"
                   }}
                 >
-                  Home
+                  {" "}
+                  HOME
                 </Links>
-              </span>
-            </Link>
-            <Link
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              <span className="navname">
+              </Nav.Link>
+              <Nav.Link style={{ color: "white", marginLeft: "20px" }}>
                 <Links
                   to="/list-pokemon"
                   style={{
@@ -114,17 +59,11 @@ function Navbar(props) {
                     textDecoration: "none"
                   }}
                 >
-                  List
+                  {" "}
+                  LIST
                 </Links>
-              </span>
-            </Link>
-            <Link
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              <span className="navname">
+              </Nav.Link>
+              <Nav.Link style={{ color: "white", marginLeft: "20px" }}>
                 <Links
                   to="/team"
                   style={{
@@ -132,24 +71,22 @@ function Navbar(props) {
                     textDecoration: "none"
                   }}
                 >
-                  Team
+                  TEAM
                 </Links>
-              </span>
-            </Link>
-          </nav>
-          <Button
-            style={{ backgroundColor: "black", width: "10px" }}
-            variant="outlined"
-            className={classes.link}
-          >
-            <Links onClick={logOut} style={{ textDecoration: "none" }}>
-              <span style={{ color: "white", fontSize: "12px" }}>Logout</span>
-            </Links>
-          </Button>
-        </Toolbar>
-      </AppBar>
+              </Nav.Link>
+              <Button
+                variant="outline-primary"
+                type="submit"
+                style={{ marginLeft: "20px" }}
+              >
+                <Links onClick={logOut}>LOGOUT</Links>
+              </Button>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </div>
   );
-}
+};
 
-export default withRouter(Navbar);
+export default withRouter(Navbarr);
