@@ -7,3 +7,41 @@
   font-size: 19px;
   margin: 7px;
 }
+.jumbotron {
+  background-image: url(./components/pppp.jpg);
+  background-size: cover;
+  height: 500px;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.imgfixed {
+  margin-top: 100px;
+  background-image: url(./components/pppp.jpg);
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.navnamee {
+  font-family: "Patrick Hand", cursive !important;
+}
+
+.ket {
+  font-family: "Roboto Mono", monospace;
+  color: #6c757d;
+  color: rgb(108, 117, 125);
+
+  line-height: 24px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0px;
+}
+.hi {
+  font-family: "Patrick Hand", cursive !important;
+}

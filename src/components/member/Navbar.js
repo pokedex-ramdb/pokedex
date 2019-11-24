@@ -141,9 +141,9 @@ function Navbar(props) {
                 </span>
               </Link>
             </nav>
-            <Button style={{backgroundColor:"red"}} variant="outlined" className={classes.link}>
+            <Button style={{backgroundColor:"black", width:'10px'}} variant="outlined" className={classes.link}>
               <Links onClick={logOut} style={{textDecoration:"none"}}>
-                <span style={{ color: "white" }}>Logout</span>
+                <span style={{ color: "white", fontSize:'12px' }}>Logout</span>
               </Links>
             </Button>
           </Toolbar>
