@@ -47,8 +47,8 @@ const Home = () => {
           <Col xs={12} style={{ textAlign: "center" }}>
             <h1 className="navnamee">Pokedex</h1>
             <hr
+              className="hr"
               style={{
-                width: "300px",
                 border: "1px solid black",
                 borderRadius: "50%"
               }}
@@ -98,10 +98,6 @@ const Home = () => {
       </Container>
       <div className="imgfixed">
         <div center>
-          <br />
-          <br />
-          <br />
-          <br />
           <p style={{ textAlign: "center", color: "white", fontSize: "30px" }}>
             Do you want to see your favorite Pokemon ?
           </p>
@@ -117,8 +113,8 @@ const Home = () => {
               List Stack
             </h1>
             <hr
+              className="hr"
               style={{
-                width: "300px",
                 border: "1px solid black",
                 borderRadius: "50%"
               }}

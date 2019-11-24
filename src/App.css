@@ -57,7 +57,16 @@
   .buton {
     margin-left: 30%;
   }
+  .liststack {
+    width: 40px !important;
+  }
+  .hr {
+    width: 200px !important;
+  }
 }
 .liststack {
   width: 80px;
+}
+.hr {
+  width: 300px;
 }
