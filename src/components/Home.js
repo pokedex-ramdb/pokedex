@@ -14,6 +14,7 @@ import mozilla from "./mozilla.png";
 import axios from "./axios.png";
 import reacticons from "./reacticons.png";
 import ubuntu from "./ubuntu.png";
+import { Link as Links } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -98,11 +99,16 @@ const Home = () => {
       </Container>
       <div className="imgfixed">
         <div center>
+          <br />
+          <br />
+          <br />
+          <br />
+
           <p style={{ textAlign: "center", color: "white", fontSize: "30px" }}>
             Do you want to see your favorite Pokemon ?
           </p>
           <Button variant="outline-primary" className="buton">
-            GET STARTED !!
+            <Links to="/login">GET STARTED !!</Links>
           </Button>
         </div>
       </div>
