@@ -23,8 +23,34 @@ export default class ListPokemon extends Component {
         super(props);
 
         this.state = {
+          filter: "",
             data: [],
-            image: []
+            dn: [
+              {
+                fname: "Jayne",
+                lname: "Washington",
+                email: "jaynewashington@exposa.com",
+                gender: "female"
+              },
+              {
+                fname: "Peterson",
+                lname: "Dalton",
+                email: "petersondalton@exposa.com",
+                gender: "male"
+              },
+              {
+                fname: "Velazquez",
+                lname: "Calderon",
+                email: "velazquezcalderon@exposa.com",
+                gender: "male"
+              },
+              {
+                fname: "Norman",
+                lname: "Reed",
+                email: "normanreed@exposa.com",
+                gender: "male"
+              }
+            ]
         };
     }
 
@@ -39,9 +65,22 @@ export default class ListPokemon extends Component {
             });
     };
 
-    render() {
+    handleChange = event => {
+      this.setState({ filter: event.target.value });
+    };
 
-        let id = 0
+    render() {
+    const { filter, data } = this.state;
+    const lowercasedFilter = filter.toLowerCase();
+    const filteredData = data.filter(item => {
+      return Object.keys(item).some(key =>
+        item[key].toLowerCase().includes(lowercasedFilter)
+      );
+    });
+
+    console.log(filteredData)
+    
+      let id = 0
 
         return (
             <div 
@@ -51,7 +90,8 @@ export default class ListPokemon extends Component {
                 justifyContent: "space-around"
             }}
             >
-                {this.state.data.map(
+              <input value={filter} onChange={this.handleChange} />
+                {filteredData.map(
                         (item, key) => {
                             id = key + 1
                             return (

@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import CardMedia from '@material-ui/core/CardMedia';
 import axios from 'axios'
+import Typography from '@material-ui/core/Typography';
 
 const StyledTableCell = withStyles((theme: Theme) =>
   createStyles({
@@ -31,18 +32,6 @@ const StyledTableRow = withStyles((theme: Theme) =>
     },
   }),
 )(TableRow);
-
-function createData(name: string, calories: number, fat: number, carbs: number, protein: number) {
-    return { name, calories, fat, carbs, protein };
-  }
-
-  const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-  ];
   
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -67,7 +56,9 @@ class DetailPokemon extends Component  {
             name: "",
             imgURL: [],
             abilities: [],
-            moves: []
+            moves: [],
+            stats: [],
+            weight: []
         };
     }
 
@@ -83,9 +74,27 @@ class DetailPokemon extends Component  {
         this.setState({ name: name });
 
         axios
+        .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        .then(response => {
+            this.setState({ weight: response.data});
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+        axios
             .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then(response => {
                 this.setState({ imgURL: response.data.sprites});
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
+        axios
+            .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+            .then(response => {
+                this.setState({ stats: response.data.stats});
             })
             .catch(error => {
                 console.log(error);
@@ -115,6 +124,7 @@ class DetailPokemon extends Component  {
         console.log(this.state.abilities)
         console.log(this.state.moves)
         console.log(this.state.imgURL.front_shiny)
+        console.log(this.state.stats)
         return (
             <div>
                 
@@ -137,23 +147,31 @@ class DetailPokemon extends Component  {
                         src={this.state.imgURL.back_shiny}>
                     </img>
                     </p>
+                    <div style={{marginBottom:"50px", marginTop:"20px"}}>
+                    <Typography variant="h3" component="h3">
+                            {this.state.name}
+                    </Typography>
+                    <Typography style={{color:"#636363"}} variant="h5" component="h3">
+                            {this.state.weight.weight} Kg
+                    </Typography>
+                    </div>
                   </CardMedia>
-                <Paper style={{margin:"0 auto", marginTop:"20px",width:"500px"}} className={useStyles.root}>
+                <Paper style={{margin:"0 auto", marginTop:"20px",width:"700px", marginBottom:"50px"}} className={useStyles.root}>
                     <Table aria-label="customized table">
                         <TableHead>
                         <TableRow>
-                            <StyledTableCell>Moves</StyledTableCell>
-                            <StyledTableCell>Moves</StyledTableCell>
+                            <StyledTableCell>Base Statistic</StyledTableCell>
+                            <StyledTableCell>Expertise</StyledTableCell>
                         </TableRow>
                         </TableHead>
                         <TableBody>
-                        {this.state.moves.map((item, key) => (
+                        {this.state.stats.map((item, key) => (
                             <StyledTableRow key={key}>
                             <StyledTableCell component="th" scope="row">
-                                {item.move.name}
+                                {item.base_stat}
                             </StyledTableCell>
                             <StyledTableCell component="th" scope="row">
-                                {item.move.name}
+                                {item.stat.name}
                             </StyledTableCell>
                             </StyledTableRow>
                         ))}
@@ -161,7 +179,7 @@ class DetailPokemon extends Component  {
                     </Table>
                 </Paper>
 
-                <Paper style={{margin:"0 auto", marginTop:"20px",width:"500px"}} className={useStyles.root}>
+                <Paper style={{margin:"0 auto", marginTop:"20px",width:"500px", marginBottom:"50px"}} className={useStyles.root}>
                     <Table aria-label="customized table">
                         <TableHead>
                         <TableRow>
@@ -180,7 +198,7 @@ class DetailPokemon extends Component  {
                     </Table>
                 </Paper>
 
-                <Paper style={{margin:"0 auto", marginTop:"20px",width:"500px"}} className={useStyles.root}>
+                <Paper style={{margin:"0 auto", marginTop:"20px",width:"500px", marginBottom:"50px"}} className={useStyles.root}>
                     <Table aria-label="customized table">
                         <TableHead>
                         <TableRow>

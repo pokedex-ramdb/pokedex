@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import MemberNavbar from "./member/Navbar";
-import GuestNavbar from "./member/Navbar";
+import GuestNavbar from "./guest/Navbar";
 import { withRouter } from "react-router-dom";
 
 const Navbar = () => {

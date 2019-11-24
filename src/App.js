@@ -1,12 +1,12 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import { Nav, Footer, Home, List, Team, SignIn, SignUp, ListPokemon, DetailPokemon } from "./components";
+import { Navbar, Footer, Home, Team, SignIn, SignUp, ListPokemon, DetailPokemon } from "./components";
 
 const App = () => {
   return (
     <Router>
       <div>
-        <Nav />
+        <Navbar />
         <Switch>
           <Route exact path="/" exact={true}>
             <Home />
