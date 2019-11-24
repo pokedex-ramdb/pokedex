@@ -5,10 +5,10 @@ import { Nav, Footer, Home, List, Team, SignIn, SignUp, ListPokemon, DetailPokem
 const App = () => {
   return (
     <Router>
-    <div>
-      <Nav />
-      <Switch>
-      <Route exact path="/" exact={true}>
+      <div>
+        <Nav />
+        <Switch>
+          <Route exact path="/" exact={true}>
             <Home />
           </Route>
           <Route path="/list-pokemon" exact={true}>
@@ -20,15 +20,15 @@ const App = () => {
           <Route path="/team" exact={true}>
             <Team />
           </Route>
-          <Route path="/login" exact={true}> 
+          <Route path="/login" exact={true}>
             <SignIn />
           </Route>
           <Route path="/register" exact={true}>
             <SignUp />
           </Route>
-      </Switch>
-      <Footer />
-    </div>
+        </Switch>
+        <Footer />
+      </div>
     </Router>
   );
 };
