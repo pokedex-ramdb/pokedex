@@ -1,6 +1,16 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import { Nav, Footer, Home, List, Team, SignIn, SignUp, ListPokemon, DetailPokemon } from "./components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  Nav,
+  Footer,
+  Home,
+  List,
+  Team,
+  SignIn,
+  SignUp,
+  ListPokemon,
+  DetailPokemon
+} from "./components";
 
 const App = () => {
   return (
@@ -14,7 +24,7 @@ const App = () => {
           <Route path="/list-pokemon" exact={true}>
             <ListPokemon />
           </Route>
-          <Route path="/pokemon/:id-:name" >
+          <Route path="/pokemon/:id-:name">
             <DetailPokemon />
           </Route>
           <Route path="/team" exact={true}>

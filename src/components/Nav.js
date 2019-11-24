@@ -60,14 +60,14 @@ export default function Pricing() {
     <div>
       <CssBaseline />
       <AppBar
-        position="static"
+        position="fixed"
         color="default"
         elevation={0}
         className={classes.appBar}
       >
         <Toolbar
           className={classes.toolbar}
-          style={{ backgroundColor: "#181818", color: "white" }}
+          style={{ backgroundColor: "#000000", color: "white" }}
         >
           <Typography
             variant="h6"
