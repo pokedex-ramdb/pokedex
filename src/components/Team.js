@@ -57,7 +57,7 @@ const Team = props => {
               <p className="card-text text-secondary">
                 He's very smart. He always wants to know everything related to
                 programming, that is the reason why he can become a full stack
-                developer and have too much experience about programming.
+                developer and have too much experience about programming. Test 1 2 3
               </p>
               <a
                 href="https://github.com/rizkianakbar"

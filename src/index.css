@@ -11,7 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.oit{
-text-align: center;
-padding: 50px;
+.oit {
+  text-align: center;
+  padding: 50px;
+}
+.card {
+  max-height: 700px;
 }
