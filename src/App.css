@@ -63,6 +63,12 @@
   .hr {
     width: 200px !important;
   }
+  .table {
+    width: 90% !important;
+  }
+  .images {
+    width: 90% !important;
+  }
 }
 .liststack {
   width: 80px;
