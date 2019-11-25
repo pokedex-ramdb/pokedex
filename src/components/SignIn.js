@@ -155,7 +155,7 @@ function SignIn(props) {
                     ) {
                       localStorage.setItem("isLogin", JSON.stringify(true));
                       if (JSON.parse(localStorage.getItem("isLogin"))) {
-                        props.history.push("/list-pokemon");
+                        props.history.push("/ ");
                       }
                     } else {
                       alert("email atau password salah");
@@ -245,8 +245,6 @@ function SignIn(props) {
                         variant="body1"
                       >
                         Don't have an account?
-                        {/* <a style={{ marginLeft: "5px" }} href="/register"> */}
-                        {/* </a> */}
                         <Link to="/register"> Sign Up</Link>
                       </Typography>
                     </form>
