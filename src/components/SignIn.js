@@ -149,10 +149,10 @@ function SignIn(props) {
                   onSubmit={(values, { setSubmitting }) => {
                     const user = JSON.parse(localStorage.getItem("user"));
                     console.log(values.email);
-                    if (
-                      user.email === values.email &&
-                      user.password === values.password
-                    ) {
+                    if (localStorage.getItem('user') !== null){
+                      if (
+                          user.email === values.email &&
+                          user.password === values.password) { 
                       localStorage.setItem("isLogin", JSON.stringify(true));
                       if (JSON.parse(localStorage.getItem("isLogin"))) {
                         props.history.push("/");
@@ -160,6 +160,9 @@ function SignIn(props) {
                     } else {
                       alert("The email or password you entered is incorrect");
                     }
+                  } else {
+                    alert("There's no data");
+                  }
                   }}
                 >
                   {({
