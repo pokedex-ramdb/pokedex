@@ -102,20 +102,12 @@ export default class ListPokemon extends Component {
         <br />
         <br />
         <br />
+
         <br />
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+
         <Container>
           <Row>
             <Col xs={12} lg={12} style={{ marginBottom: "5%" }}>
