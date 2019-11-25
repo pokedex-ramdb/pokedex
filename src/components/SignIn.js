@@ -6,7 +6,6 @@ import {
   Button,
   IconButton,
   TextField,
-  Link,
   Typography
 } from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
@@ -16,7 +15,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link as Links,
+  Link,
   withRouter
 } from "react-router-dom";
 import { SignUp } from ".";
@@ -128,138 +127,136 @@ function SignIn(props) {
 
   return (
     <React.Fragment>
-      <Router>
-        <div className={classes.root}>
-          <Grid className={classes.grid} container>
-            <Grid className={classes.quoteContainer} item lg={5}>
-              <div className={classes.quote}></div>
-            </Grid>
-            <Grid className={classes.content} item lg={7} xs={12}>
-              <div className={classes.content}>
-                <div className={classes.contentHeader}>
-                  <IconButton onClick={handleBack}>
-                    <ArrowBackIcon />
-                  </IconButton>
-                </div>
-                <div className={classes.contentBody}>
-                  <Formik
-                    initialValues={{
-                      email: "",
-                      password: ""
-                    }}
-                    validate={validationForm}
-                    onSubmit={(values, { setSubmitting }) => {
-                      const user = JSON.parse(localStorage.getItem("user"));
-                      console.log(values.email);
-                      if (
-                        user.email === values.email &&
-                        user.password === values.password
-                      ) {
-                        localStorage.setItem("isLogin", JSON.stringify(true));
-                        if (JSON.parse(localStorage.getItem("isLogin"))) {
-                          props.history.push("/list-pokemon");
-                        }
-                      } else {
-                        alert("email atau password salah");
-                      }
-                    }}
-                  >
-                    {({
-                      values,
-                      handleChange,
-                      handleBlur,
-                      handleSubmit,
-                      isSubmitting
-                    }) => (
-                      <form
-                        className={classes.form}
-                        onSubmit={handleSubmit}
-                        noValidate
-                      >
-                        <Typography className={classes.title} variant="h3">
-                          Sign in
-                        </Typography>
-                        <Grid
-                          className={classes.socialButtons}
-                          container
-                          spacing={2}
-                        ></Grid>
-                        <TextField
-                          className={classes.textField}
-                          variant="outlined"
-                          required
-                          fullWidth
-                          id="email"
-                          label="Email Address"
-                          name="email"
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          defaultValue={values.email}
-                          autoComplete="email"
-                        />
-                        <p
-                          style={{
-                            color: "red",
-                            fontStyle: "italic"
-                          }}
-                        >
-                          <ErrorMessage name="email" />
-                        </p>
-                        <TextField
-                          className={classes.textField}
-                          variant="outlined"
-                          required
-                          fullWidth
-                          name="password"
-                          label="Password"
-                          type="password"
-                          id="password"
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          defaultValue={values.password}
-                          autoComplete="current-password"
-                        />
-                        <p
-                          style={{
-                            color: "red",
-                            fontStyle: "italic"
-                          }}
-                        >
-                          <ErrorMessage name="password" />
-                        </p>
-                        <Button
-                          style={{
-                            marginTop: "15px",
-                            backgroundColor: "black"
-                          }}
-                          className={classes.signUpButton}
-                          color="primary"
-                          fullWidth
-                          size="large"
-                          type="submit"
-                          variant="contained"
-                        >
-                          Sign in now
-                        </Button>
-                        <Typography
-                          style={{ marginTop: "15px" }}
-                          color="textSecondary"
-                          variant="body1"
-                        >
-                          Don't have an account?
-                          <a style={{ marginLeft: "5px" }} href="/register">
-                            Sign Up
-                          </a>
-                        </Typography>
-                      </form>
-                    )}
-                  </Formik>
-                </div>
-              </div>
-            </Grid>
+      <div className={classes.root}>
+        <Grid className={classes.grid} container>
+          <Grid className={classes.quoteContainer} item lg={5}>
+            <div className={classes.quote}></div>
           </Grid>
-        </div>
-      </Router>
+          <Grid className={classes.content} item lg={7} xs={12}>
+            <div className={classes.content}>
+              <div className={classes.contentHeader}>
+                <IconButton onClick={handleBack}>
+                  <ArrowBackIcon />
+                </IconButton>
+              </div>
+              <div className={classes.contentBody}>
+                <Formik
+                  initialValues={{
+                    email: "",
+                    password: ""
+                  }}
+                  validate={validationForm}
+                  onSubmit={(values, { setSubmitting }) => {
+                    const user = JSON.parse(localStorage.getItem("user"));
+                    console.log(values.email);
+                    if (
+                      user.email === values.email &&
+                      user.password === values.password
+                    ) {
+                      localStorage.setItem("isLogin", JSON.stringify(true));
+                      if (JSON.parse(localStorage.getItem("isLogin"))) {
+                        props.history.push("/list-pokemon");
+                      }
+                    } else {
+                      alert("email atau password salah");
+                    }
+                  }}
+                >
+                  {({
+                    values,
+                    handleChange,
+                    handleBlur,
+                    handleSubmit,
+                    isSubmitting
+                  }) => (
+                    <form
+                      className={classes.form}
+                      onSubmit={handleSubmit}
+                      noValidate
+                    >
+                      <Typography className={classes.title} variant="h3">
+                        Sign in
+                      </Typography>
+                      <Grid
+                        className={classes.socialButtons}
+                        container
+                        spacing={2}
+                      ></Grid>
+                      <TextField
+                        className={classes.textField}
+                        variant="outlined"
+                        required
+                        fullWidth
+                        id="email"
+                        label="Email Address"
+                        name="email"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        defaultValue={values.email}
+                        autoComplete="email"
+                      />
+                      <p
+                        style={{
+                          color: "red",
+                          fontStyle: "italic"
+                        }}
+                      >
+                        <ErrorMessage name="email" />
+                      </p>
+                      <TextField
+                        className={classes.textField}
+                        variant="outlined"
+                        required
+                        fullWidth
+                        name="password"
+                        label="Password"
+                        type="password"
+                        id="password"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        defaultValue={values.password}
+                        autoComplete="current-password"
+                      />
+                      <p
+                        style={{
+                          color: "red",
+                          fontStyle: "italic"
+                        }}
+                      >
+                        <ErrorMessage name="password" />
+                      </p>
+                      <Button
+                        style={{
+                          marginTop: "15px",
+                          backgroundColor: "black"
+                        }}
+                        className={classes.signUpButton}
+                        color="primary"
+                        fullWidth
+                        size="large"
+                        type="submit"
+                        variant="contained"
+                      >
+                        Sign in now
+                      </Button>
+                      <Typography
+                        style={{ marginTop: "15px" }}
+                        color="textSecondary"
+                        variant="body1"
+                      >
+                        Don't have an account?
+                        {/* <a style={{ marginLeft: "5px" }} href="/register"> */}
+                        {/* </a> */}
+                        <Link to="/register"> Sign Up</Link>
+                      </Typography>
+                    </form>
+                  )}
+                </Formik>
+              </div>
+            </div>
+          </Grid>
+        </Grid>
+      </div>
     </React.Fragment>
   );
 }

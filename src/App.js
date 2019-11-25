@@ -31,7 +31,7 @@ const App = () => {
           <Route path="/login" exact={true}>
             <SignIn />
           </Route>
-          <Route path="/register" exact={true}>
+          <Route path="/register">
             <SignUp />
           </Route>
         </Switch>

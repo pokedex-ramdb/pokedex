@@ -1,13 +1,12 @@
 import React from "react";
 import image from "../img/bg-poke.jpg";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Grid,
   Button,
   IconButton,
   TextField,
-  Link,
   Typography
 } from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
@@ -118,26 +117,13 @@ function SignUp(props) {
 
   return (
     <div className={classes.root}>
-      <Grid
-        className={classes.grid}
-        container
-      >
-        <Grid
-          className={classes.quoteContainer}
-          item
-          lg={5}
-        >
-            <div className={classes.quote}>
-          </div>
+      <Grid className={classes.grid} container>
+        <Grid className={classes.quoteContainer} item lg={5}>
+          <div className={classes.quote}></div>
         </Grid>
-        <Grid
-          className={classes.content}
-          item
-          lg={7}
-          xs={12}
-        >
+        <Grid className={classes.content} item lg={7} xs={12}>
           <div className={classes.content}>
-          <div className={classes.contentHeader}>
+            <div className={classes.contentHeader}>
               <IconButton onClick={handleBack}>
                 <ArrowBackIcon />
               </IconButton>
@@ -164,7 +150,6 @@ function SignUp(props) {
                   isSubmitting
                 }) => (
                   <form
-                   
                     className={classes.form}
                     onSubmit={handleSubmit}
                     noValidate
@@ -278,9 +263,9 @@ function SignUp(props) {
                     </Button>
                     <Typography color="textSecondary" variant="body1">
                       Have an account?{" "}
-                      <a style={{ marginLeft: "0px" }} href="/login">
-                        Sign In
-                      </a>
+                      {/* <a style={{ marginLeft: "0px" }} href="/login"> */}
+                      <Link to="/login">Sign In</Link>
+                      {/* </a> */}
                     </Typography>
                   </form>
                 )}
