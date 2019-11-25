@@ -158,7 +158,7 @@ function SignIn(props) {
                         props.history.push("/");
                       }
                     } else {
-                      alert("email atau password salah");
+                      alert("The email or password you entered is incorrect");
                     }
                   }}
                 >
