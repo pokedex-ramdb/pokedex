@@ -155,7 +155,7 @@ function SignIn(props) {
                     ) {
                       localStorage.setItem("isLogin", JSON.stringify(true));
                       if (JSON.parse(localStorage.getItem("isLogin"))) {
-                        props.history.push("/ ");
+                        props.history.push("/");
                       }
                     } else {
                       alert("email atau password salah");

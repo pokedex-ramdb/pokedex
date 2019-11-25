@@ -17,6 +17,9 @@ import ubuntu from "../../../components/ubuntu.png";
 import { Link as Links } from "react-router-dom";
 
 const Home = () => {
+    const user = JSON.parse(localStorage.getItem("user"))
+    const firstName = user.firstName
+    const lastName = user.lastName
   return (
     <div>
       <Jumbotron fluid className="jumbotron">
@@ -40,7 +43,7 @@ const Home = () => {
             lineHeight: "5px"
           }}
         >
-          mr. Rizkianakbar{" "}
+          {firstName} {lastName}
         </p>
       </Jumbotron>
       <Container>

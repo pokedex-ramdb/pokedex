@@ -8,7 +8,8 @@ import {
   SignIn,
   SignUp,
   ListPokemon,
-  DetailPokemon
+  DetailPokemon,
+  HomeMember
 } from "./components";
 const App = () => {
   return (
