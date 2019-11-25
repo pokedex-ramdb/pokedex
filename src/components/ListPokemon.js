@@ -94,6 +94,7 @@ class ListPokemon extends Component {
             <Col xs={12} lg={12} style={{ marginBottom: "5%" }}>
               <Form inline>
                 <FormControl
+                  style={{ width: "100%", textAlign: "center" }}
                   type="text"
                   value={filter}
                   onChange={this.handleChange}
