@@ -145,7 +145,7 @@ class ListPokemon extends Component {
               <CardActionArea>
                 <img
                   style={{ width: "200px", height: "200px" }}
-                  src={black}
+                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${id}.png`}
                 ></img>
                 <CardContent>
                   <Typography
