@@ -14,7 +14,7 @@ const Team = props => {
         <Container>
           <Row>
             <Col xs={12} lg={3}>
-              <div className="card text-center" style={{ marginTop: "100px" }}>
+              <div className="card text-center" style={{ marginTop: "50px" }}>
                 <div className="overflow">
                   <img
                     src="https://pbs.twimg.com/media/DxAi6SMWoAYd6fb.jpg"
@@ -47,7 +47,7 @@ const Team = props => {
               </div>
             </Col>
             <Col xs={12} lg={3}>
-              <div className="card text-center" style={{ marginTop: "100px" }}>
+              <div className="card text-center" style={{ marginTop: "50px" }}>
                 <div className="overflow">
                   <img
                     src="https://i.pinimg.com/736x/f1/fb/17/f1fb17e308b7e3fcc053d4a849c692ba.jpg"
@@ -80,7 +80,7 @@ const Team = props => {
               </div>
             </Col>
             <Col xs={12} lg={3}>
-              <div className="card text-center" style={{ marginTop: "100px" }}>
+              <div className="card text-center" style={{ marginTop: "50px" }}>
                 <div className="overflow">
                   <img
                     src="https://i.pinimg.com/236x/4d/8d/6c/4d8d6c22156bcc835603eb4662af3318.jpg"
@@ -112,7 +112,7 @@ const Team = props => {
               </div>
             </Col>
             <Col xs={12} lg={3}>
-              <div className="card text-center" style={{ marginTop: "100px" }}>
+              <div className="card text-center" style={{ marginTop: "50px" }}>
                 <div className="overflow">
                   <img
                     src="https://i.pinimg.com/736x/0f/f4/8b/0ff48b6c8161635367d8fdcec2b42339.jpg"

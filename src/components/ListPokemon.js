@@ -7,7 +7,14 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
-import arbox from "./arbox.png";
+import black from "./black.png";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from "react-router-dom";
 import {
   Container,
   Row,
@@ -26,7 +33,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default class ListPokemon extends Component {
+class ListPokemon extends Component {
   constructor(props) {
     super(props);
 
@@ -138,7 +145,7 @@ export default class ListPokemon extends Component {
               <CardActionArea>
                 <img
                   style={{ width: "200px", height: "200px" }}
-                  src={arbox}
+                  src={black}
                 ></img>
                 <CardContent>
                   <Typography
@@ -147,7 +154,12 @@ export default class ListPokemon extends Component {
                     component="h2"
                     style={{ textAlign: "center" }}
                   >
-                    <a href={`/pokemon/${id}-${item.name}`}>{item.name}</a>
+                    <Link
+                      style={{ color: "#000000" }}
+                      to={`/pokemon/${id}-${item.name}`}
+                    >
+                      {item.name}
+                    </Link>
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -158,3 +170,4 @@ export default class ListPokemon extends Component {
     );
   }
 }
+export default withRouter(ListPokemon);
